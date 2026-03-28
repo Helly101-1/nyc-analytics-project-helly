@@ -1,0 +1,17 @@
+version: 2
+sources:
+  - name: raw
+    description: Raw data loaded from NYC Open Data
+    database: sustained-valor-485821-q8
+    schema: nyc_311_raw_data
+    tables:
+      - name: source_dot_service_requests_history
+        description: NYC 311 service requests
+        columns:
+          - name: unique_key
+            tests:
+              - unique
+              - not_null
+          - name: created_date
+          - name: complaint_type
+          - name: borough
