@@ -15,3 +15,6 @@ sources:
           - name: created_date
           - name: complaint_type
           - name: borough
+
+      - name: source_nyc_open_restaurant_apps
+        description: NYC Open Restaurant Applications data
