@@ -1,6 +1,9 @@
 -- Clean and standardize 311 DOT service request data
 -- One row per service request
 
+-- Clean and standardize 311 DOT service request data
+-- One row per service request
+
 WITH source AS (
   SELECT * FROM {{ source('raw', 'source_dot_service_requests_history') }}
 ),
@@ -28,7 +31,6 @@ cleaned AS (
     ),
 
     CAST(unique_key AS STRING) AS request_id,
-
     CAST(created_date AS TIMESTAMP) AS created_date,
     CAST(closed_date AS TIMESTAMP) AS closed_date,
 
@@ -66,7 +68,6 @@ cleaned AS (
     CAST(longitude AS NUMERIC) AS longitude,
 
     CAST(open_data_channel_type AS STRING) AS method_of_submission,
-
     CURRENT_TIMESTAMP() AS _stg_loaded_at
 
   FROM source
