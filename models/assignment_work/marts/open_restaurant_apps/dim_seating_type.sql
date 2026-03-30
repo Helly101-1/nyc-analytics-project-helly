@@ -1,4 +1,3 @@
-
 -- Seating type dimension for open restaurant seating applications
 
 WITH seating_types AS (
