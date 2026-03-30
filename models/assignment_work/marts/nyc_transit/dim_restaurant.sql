@@ -1,5 +1,8 @@
 -- Restaurant dimension for open restaurant applications
-
+{{ config(
+    materialized='table',
+    schema='nyc_transit_restaurants_marts'
+) }}
 WITH restaurants AS (
    SELECT DISTINCT
        restaurant_name,
